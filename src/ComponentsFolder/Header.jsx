@@ -5,7 +5,7 @@ const Header=()=>{
 
     
 return(
-    <div style={{backgroundColor:'#202124'}} > 
+    <div className=" header" style={{backgroundColor:'#202124'}} > 
        
         <div className=" py-5">
             <div className=" flex justify-end space-x-2 mr-3">

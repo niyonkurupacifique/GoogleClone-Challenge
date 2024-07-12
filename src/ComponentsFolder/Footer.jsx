@@ -11,20 +11,25 @@ const Footer=()=>{
   const isSmallMediumScreen = useMediaQuery({ minWidth: 576, maxWidth: 991 });
 
 return(
-    <div className="" style={{backgroundColor:'#171717'}}>
+    <footer style={{
+        backgroundColor: '#171717',
+        position:'fixed',
+        width:'100%',
+        bottom: 0,
+    }} className=" footerHeight bottom-0 w-full" >
        <div  className=" flex-1 ">
-       <div style={{borderColor:'#313335'}} className={` flex  px-4 border border-b border-x-0 border-t-0`}>
+       <div style={{borderColor:'#313335',maxHeight:60}} className={` flex  px-4 border border-b border-x-0 border-t-0`}>
         <span style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}} className=" py-3">Rwanda</span>
        </div>
-        <div className={` ${isLargeScreen&&' justify-around'} ${isMediumScreen&&' justify-around'} ${isSmallScreen&&' justify-around'} ${isExtraLargeScreen&&' justify-between'} ${isExtraSmallScreen?'flex flex-col justify-center':'flex'}  px-4`}>
+        <div  style={{maxHeight:60}} className={` ${isLargeScreen&&' justify-around'} ${isMediumScreen&&' justify-around'} ${isSmallScreen&&' justify-around'} ${isExtraLargeScreen&&' justify-between'} ${isExtraSmallScreen?'flex flex-col justify-center':'flex'}  px-4`}>
             <div className="py-3 flex  space-x-8">
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>About</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Adverstising</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Business</div>
-            <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>How Search Works</div>
+            <div className=" whitespace-nowrap" style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>How Search Works</div>
             </div>
 
-            <div className="py-3 pt-3  flex space-x-8">
+            <div style={{ backgroundColor: '#171717'}} className="py-3 pt-3  flex space-x-8">
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Privacy</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Terms</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Settings</div>
@@ -32,7 +37,7 @@ return(
            
         </div>
        </div>
-    </div>
+    </footer>
 )
 }
 export default Footer
