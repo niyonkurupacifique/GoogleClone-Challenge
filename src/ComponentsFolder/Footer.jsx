@@ -26,7 +26,7 @@ return(
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>About</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Adverstising</div>
             <div style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>Business</div>
-            <div className=" whitespace-nowrap" style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>How Search Works</div>
+            <div className=" whitespace-nowrap4" style={{fontFamily:'Arial, sans-serif',fontSize:'15px',fontWeight:400,lineHeight:'normal',color:'white'}}>How Search Works</div>
             </div>
 
             <div style={{ backgroundColor: '#171717'}} className="py-3 pt-3  flex space-x-8">
