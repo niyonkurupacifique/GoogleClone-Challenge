@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useDispatch ,useSelector} from "react-redux";
 import { setSearchResultData } from "../action";
 import { useNavigate } from 'react-router-dom';
+import { useToast } from '@chakra-ui/react'
 
 
 const Body=()=>{
+    const toast = useToast()
+
     const [searchinput,setSearchinput]=useState("")
     const dispatch=useDispatch()
     const navigate = useNavigate();
@@ -12,6 +15,13 @@ const Body=()=>{
   console.log("search result in body",searchResult)
 
     const Handlesearch=()=>{
+        const loadingToastId = toast({
+            title: '',
+            description: 'Please wait...',
+            status: 'loading',
+            position: 'top',
+            duration: null, 
+          });
   
         var myHeaders = new Headers();
         myHeaders.append("X-API-KEY", "d32c3bf8283330149dc3f05be9bdd627d229d656");
@@ -27,11 +37,27 @@ const Body=()=>{
           body: raw,
           redirect: 'follow'
         };
+         if(searchinput==="")
+            {
+              toast({
+                title: 'failed',
+                description:"Search input is required",
+                position: 'top',
+                status: 'error',
+                duration: 3000,
+              });
+              toast.close(loadingToastId);
+              return;
+            }
+            else{
+                fetch("https://google.serper.dev/search", requestOptions)
+                .then(response => response.text())
+                .then(result => dispatch(setSearchResultData(result)),navigate("/searchresult"),toast.close(loadingToastId))
+                .catch(error => console.log('error', error));
+                
+            }
         
-        fetch("https://google.serper.dev/search", requestOptions)
-          .then(response => response.text())
-          .then(result => dispatch(setSearchResultData(result)),navigate("/searchresult"))
-          .catch(error => console.log('error', error));
+        
 
     }
 

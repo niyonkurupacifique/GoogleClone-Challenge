@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store,persistor } from './store';
 import { Provider } from 'react-redux';
+import { ChakraProvider } from '@chakra-ui/react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,9 @@ root.render(
    
     <Provider store={store}>
      <PersistGate loading={null} persistor={persistor}>
+     <ChakraProvider>
      <App />
+     </ChakraProvider>
      </PersistGate>
      </Provider>
     </BrowserRouter>,
